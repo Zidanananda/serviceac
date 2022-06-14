@@ -4,7 +4,7 @@
       <h3 class="page-title">
         <span class="page-title-icon bg-gradient-primary text-white mr-2">
           <i class="mdi mdi-pizza"></i>
-        </span> Ubah Toping
+        </span> Ubah Merk AC
       </h3>
       <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
@@ -18,7 +18,7 @@
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Toping Pizza</h4>
+            <h4 class="card-title">Merk AC</h4>
             <?php if (validation_errors()) { ?>
               <div class="alert alert-danger" role="alert">
                 <?= validation_errors(); ?>
@@ -28,7 +28,7 @@
             <?php foreach ($toping as $b) { ?>
               <form class="forms-sample" action="<?= base_url(); ?>admin/u_toping" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                  <label for="exampleInputName1">Nama Toping</label>
+                  <label for="exampleInputName1">Nama Merk</label>
                   <input type="hidden" name="id_toping" id="id_toping" value="<?php echo $b['id_toping']; ?>">
                   <input type="text" class="form-control" name="nama_toping" id="nama_toping" placeholder="Nama produk pizza" value="<?= $b['nama_toping']; ?>" required>
                 </div>

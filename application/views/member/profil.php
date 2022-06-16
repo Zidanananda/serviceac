@@ -25,7 +25,7 @@
 				<div class="col-md-12">
 					<div class="products">
 						<img src="<?= base_url(); ?>assets/uploads/member/<?= $profils->image; ?>" style="width:280px; height:240px;" alt="">
-						<h4>Nama s: <?= $profils->nama; ?></h4>
+						<h4>Nama  : <?= $profils->nama; ?></h4>
 						<h6>Email : <?= $profils->email; ?></h6>
 						<h6>Alamat: <?= $profils->alamat; ?></h6>
 						<p class="numeric">No.Telp :<?= $profils->no_telp; ?></p>

@@ -2,7 +2,7 @@
     <div class="main">
         <div class="row">
             <div class="col-md-12 ">
-                <h2>Proses Pesanan Anda !</h2>
+                <h2>Pesanan Anda Akan di proses !</h2>
             </div>
         </div>
         <div class="row">
@@ -45,18 +45,7 @@
                                                 <input type="hidden" name="produk_dibeli" value="<?= $produk->nama_produk; ?>, Harga: @<?= $produk->harga; ?>x<?= $p->jumlah ?> = <?= $p->jumlah * $produk->harga; ?>">
                                             </th>
                                         </tr>
-                                        <tr>
-                                            <th> Toping </th>
-                                            <th> <?= $produk->nama_toping; ?>
-                                            </th>
-                                            <!-- <th>
-                                            <select name="" id="">
-                                                <?php foreach ($prodtop as $toping) { ?>
-                                                    <option value="<?= $toping->id_toping; ?>"><?= $toping->nama_toping; ?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </th> -->
-                                        </tr>
+
                                         <!-- <tr>
                                         <th> Harga </th>
                                         <th> <?= $produk->harga; ?> </th>
@@ -73,6 +62,7 @@
                                                 <select class="form-control-lg js-example-basic-single" name="atm" id="atm" style="width:100%" required>
                                                     <option> ATM Mandiri (7365437548)</option>
                                                     <option> ATM BCA (959689548) </option>
+                                                    <option> COD (Bayar Di Tempat) </option>
                                                 </select>
                                             </th>
                                         </tr>
@@ -99,7 +89,7 @@
                                 </table>
                                 <div class="form-group row justify-content-end">
                                     <div class="col-sm-10">
-                                    <span class="btn btn-outline-secondary fas fw fa-reply" onclick="window.history.go(-1)"> Batalkan Transaksi</span>
+                                        <span class="btn btn-outline-secondary fas fw fa-reply" onclick="window.history.go(-1)"> Batalkan Transaksi</span>
                                         <button class="btn btn-outline-primary" type="submit"> Proses
                                             <!-- <a href="<?= base_url(); ?>pesanan/detail_pesanan/<?= $produk->kode_produk ?>"> Proses</a> -->
                                         </button>

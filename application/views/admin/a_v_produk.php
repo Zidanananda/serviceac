@@ -92,8 +92,8 @@
 
             <form class="forms-sample" action="<?= base_url(); ?>admin/t_produk" method="post" enctype="multipart/form-data">
               <div class="form-group">
-                <label for="exampleInputName1">Nama Produk</label>
-                <input type="text" class="form-control" name="namaproduk" id="namaproduk" placeholder="Nama produk pizza" required>
+                <label for="exampleInputName1">Nama Produk Jasa</label>
+                <input type="text" class="form-control" name="namaproduk" id="namaproduk" placeholder="Nama produk jasa" required>
               </div>
               <div class="form-group">
                 <label for="exampleSelectGender">Type AC</label>
@@ -120,7 +120,7 @@
                 <input type="number" class="form-control" name="harga" id="harga" placeholder="Harga" required>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword4">Stok Awal</label>
+                <label for="exampleInputPassword4">Stok Jasa Perminggu</label>
                 <input type="number" class="form-control" name="stok" id="stok" placeholder="Stok" required>
               </div>
               <div class="form-group">

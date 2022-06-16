@@ -1,5 +1,5 @@
 <div class="block-heading ">
-    <h2 style="background:gray; color:yellow; padding:0.25em; border-radius:0.3em;border-bottom:3px double yellow ">DETAIL PRODUK</h2>
+    <h2 style="background:gray; color:yellow; padding:0.25em; border-radius:0.3em;border-bottom:3px double yellow ">DETAIL PRODUK JASA</h2>
 </div>
 <div class="x_panel" align="center">
     <div class="x_content">
@@ -21,7 +21,7 @@
                                             <td nowrap><?= $produk->harga; ?> <input type="hidden" name="harga" value="<?= $produk->harga; ?>"></td>
                                         </tr>
                                         <tr>
-                                            <th nowrap>Tambahkan Type AC </th>
+                                            <th nowrap>Type AC </th>
                                             <td><?= $produk->ukuran; ?><input type="hidden" name="ukuran" value="<?= $produk->ukuran; ?>"></td>
                                         </tr>
                                         <tr>

@@ -7,7 +7,7 @@ class Admin extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model(['m_member', 'm_produk', 'm_toping']);
+		$this->load->model(['m_member', 'm_produk', 'm_toping', 'm_pesanan']);
 		$this->load->library('form_validation');
 	}
 
@@ -95,7 +95,7 @@ class Admin extends CI_Controller
 			redirect(base_url("admin/login"));
 		} else {
 			// Query Pesanan
-			$q_pesanan = "SELECT * FROM pesan a 
+			$q_pesanan = "SELECT *, a.alamat as alamat_new FROM pesan a 
             left join produk b on a.kode_produk=b.kode_produk 
             left join detail c on a.kode_produk=c.kode_produk 
             left join toping d on c.toping=d.kode_toping
@@ -113,6 +113,42 @@ class Admin extends CI_Controller
 			$this->load->view('admin/template/a_v_sidebar');
 			$this->load->view('admin/a_v_pemesanan', $data);
 			$this->load->view('admin/template/a_v_footer');
+		}
+	}
+	public function u_pemesanan()
+	{
+		$data['judul'] = 'Ubah Data Pemesanan';
+		//$data['user'] = $this->model_user->cekData(['email' => $this->session->userdata('email')])->row_array();
+		//$data['produk'] = $this->m_produk->produkWhere(['id_produk' => $this->uri->segment(3)])->result_array();
+		$idp = $this->uri->segment(3);
+		$q_pesanan = "SELECT * FROM pesan a 
+            left join produk b on a.kode_produk=b.kode_produk 
+            left join detail c on a.kode_produk=c.kode_produk 
+            left join toping d on c.toping=d.kode_toping
+			left join user e on a.id_user=e.id
+			where a.id_pesan=$idp
+            ORDER BY a.id_pesan ASC";
+		$r_pesanan = $this->m_produk->customquery($q_pesanan)->result_array();
+		$data['produk'] = $r_pesanan;
+
+		$this->form_validation->set_rules('status', 'Status Pesanan', 'required', [
+			'required' => 'Status Pesanan harus diisi',
+		]);
+
+		if ($this->form_validation->run() == false) {
+			$this->load->view('admin/template/a_v_header');
+			$this->load->view('admin/template/a_v_navbar');
+			$this->load->view('admin/template/a_v_sidebar');
+			$this->load->view('admin/a_u_pemesanan', $data);
+			$this->load->view('admin/template/a_v_footer');
+		} else {
+
+			$data = [
+				'status' => $this->input->post('status', true),
+			];
+			$this->m_pesanan->update('pesan', $data, 'id_pesan', $idp);
+			//$this->m_produk->updateproduk($data, ['id_produk' => $this->input->post('id_produk')]);
+			redirect('admin/v_pemesanan');
 		}
 	}
 	public function v_produk()
@@ -179,7 +215,7 @@ class Admin extends CI_Controller
 			$this->db->insert('detail', $datad);
 
 			//unlink($image_data['full_path']);
-			$this->session->set_flashdata('sucmsg_addprod', 'Produk baru berhasil di tambah!');
+			$this->session->set_flashdata('sucmsg_addprod', 'Produk Jasa baru berhasil di tambah!');
 
 			redirect(base_url("admin/v_produk"));
 		}
@@ -191,8 +227,8 @@ class Admin extends CI_Controller
 		$data['produk'] = $this->m_produk->produkWhere(['id_produk' => $this->uri->segment(3)])->result_array();
 
 		$this->form_validation->set_rules('nama_produk', 'Nama Produk', 'required|min_length[3]', [
-			'required' => 'Nama Produk harus diisi',
-			'min_length' => 'Nama Produk terlalu pendek'
+			'required' => 'Nama Produk jasa harus diisi',
+			'min_length' => 'Nama Produk jasa terlalu pendek'
 		]);
 
 		$this->form_validation->set_rules('harga', 'Harga', 'required|numeric', [
@@ -201,7 +237,7 @@ class Admin extends CI_Controller
 		]);
 
 		$this->form_validation->set_rules('stok', 'Stok', 'required|numeric', [
-			'required' => 'Stok harus diisi',
+			'required' => 'Stok jasa harus diisi',
 			'numeric' => 'Yang anda masukan bukan angka'
 		]);
 
@@ -278,9 +314,9 @@ class Admin extends CI_Controller
 
 		$datap['kode_toping'] = 'toping-' . $randkode . 'fikar';
 		$datap['nama_toping'] = $this->input->post('namaproduk');
-		$datap['deskripsi'] = $this->input->post('deskripsi_toping');
+		/* $datap['deskripsi'] = $this->input->post('deskripsi_toping'); */
 		$this->db->insert('toping', $datap);
-		$this->session->set_flashdata('sucmsg_addprod', 'Toping baru berhasil di tambah!');
+		$this->session->set_flashdata('sucmsg_addprod', 'Merk AC baru berhasil di tambah!');
 		redirect(base_url("admin/v_toping"));
 	}
 	public function u_toping()
@@ -289,8 +325,8 @@ class Admin extends CI_Controller
 		$data['toping'] = $this->m_toping->topingWhere(['id_toping' => $this->uri->segment(3)])->result_array();
 
 		$this->form_validation->set_rules('nama_toping', 'Nama Toping', 'required|min_length[3]', [
-			'required' => 'Nama Toping harus diisi',
-			'min_length' => 'Nama Toping terlalu pendek'
+			'required' => 'Nama Merk AC harus diisi',
+			'min_length' => 'Nama Merk AC terlalu pendek'
 		]);
 
 		$this->form_validation->set_rules('deskripsi_toping', 'Deskripsi', 'required|min_length[3]', [
@@ -313,7 +349,7 @@ class Admin extends CI_Controller
 				'deskripsi' => $this->input->post('deskripsi_toping', true)
 
 			];
-			$this->session->set_flashdata('sucmsg_addprod', 'Toping berhasil di ubah!');
+			$this->session->set_flashdata('sucmsg_addprod', 'Merk AC berhasil di ubah!');
 			$this->m_toping->updatetoping($data, ['id_toping' => $this->input->post('id_toping')]);
 			redirect('admin/v_toping');
 		}

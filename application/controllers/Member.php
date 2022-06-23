@@ -111,7 +111,7 @@ class Member extends CI_Controller
 				$this->session->set_flashdata('sukses_msg', 'Registrasi sukses, silahkan login!');
 				redirect(base_url("member/login"));
 			} else {
-				$this->session->set_flashdata('result_msg', 'Upss ada yang salah!');
+				$this->session->set_flashdata('result_msg', 'Upss maaf ada yang salah!');
 				redirect(base_url("member/daftar"));
 			}
 		}

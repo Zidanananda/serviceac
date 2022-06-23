@@ -8,7 +8,7 @@
               <div class="brand-logo">
                 <img src="<?= base_url(); ?>assets/images/Logo/admin.png">
               </div>
-              <h4>Hello GO ~ AC Service !</h4>
+              <h4>Hello <span style=" text-shadow: 3px 2px 1px black; color:cyan">GO ~ AC</span> Service!</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
               <?php
               $error_msg = $this->session->flashdata('error_msg');

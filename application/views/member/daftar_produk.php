@@ -6,7 +6,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="products-heading">
-						<h2>PRODUK JASA PILIHAN</h2>
+						<h2>JASA SERVICE</h2>
 					</div>
 				</div>
 			</div>

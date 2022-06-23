@@ -1,6 +1,41 @@
 <!-- CATAGORIE Start
     ================================================== -->
 
+<section id="catagorie">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="block">
+					<div class="block-heading ">
+						<h2 style="background:black; color:cyan; padding:0.25em; border-radius:0.3em;border-bottom:3px double cyan ">DESKRIPSI PRODUK</h2>
+					</div>
+					<div class="row">
+						<?php foreach ($prodfeature as $prodfeatures) { ?>
+							<div class="col-sm-6 col-md-4">
+								<div class="thumbnail">
+									<a class="catagotie-head" href="<?= base_url(); ?>daftar_produk/detail_produk/<?= $prodfeatures->id_produk; ?>">
+										<img src="<?= base_url(); ?>assets/uploads/pizza/<?= $prodfeatures->image; ?>" style="width:350px; height:220px;" alt="...">
+										<h3><?= $prodfeatures->nama_produk; ?></h3>
+									</a>
+									<div class="caption">
+										<p><?= $prodfeatures->deskripsi; ?></p>
+										<p>
+											<a href="<?= base_url(); ?>daftar_produk/detail_produk/<?= $prodfeatures->id_produk; ?>" class="btn btn-default btn-transparent" role="button">
+												<span><i class="fas fa-eye"></i> Check Items</span>
+											</a>
+										</p>
+									</div> <!-- End of /.caption -->
+								</div> <!-- End of /.thumbnail -->
+							</div> <!-- End of /.col-sm-6 col-md-4 -->
+						<?php } ?>
+					</div> <!-- End of /.row -->
+				</div> <!-- End of /.block -->
+			</div> <!-- End of /.col-md-12 -->
+		</div> <!-- End of /.row -->
+	</div> <!-- End of /.container -->
+</section> <!-- End of Section -->
+
+
 
 
 <!-- PRODUCTS Start
@@ -11,7 +46,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="products-heading">
-					<h2>PRODUK JASA PILIHAN</h2>
+					<h2>PRODUK PILIHAN</h2>
 				</div>
 			</div>
 		</div>

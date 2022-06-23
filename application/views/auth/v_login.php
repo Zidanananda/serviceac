@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-9">
-				<p class="contact-action"><i class="fa fa-phone-square"></i>AC ANDA BERMASALAH ?, Telpon aja kesini: <strong>+62 13 2648 1439</strong></p>
+				<p class="contact-action"><i class="fa fa-phone-square"></i>AC Anda Bermasalah ?, Telpon aja kesini: <strong>+62 813 2648 1439</strong></p>
 			</div>
 			<div class="col-md-3 clearfix">
 				<ul class="login-cart">

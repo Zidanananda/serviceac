@@ -20,11 +20,11 @@
                                             <td nowrap><?= $produk->harga; ?> <input type="hidden" name="harga" value="<?= $produk->harga; ?>"></td>
                                         </tr>
                                         <tr>
-                                            <th nowrap>Ukuran </th>
+                                            <th nowrap>Tipe AC </th>
                                             <td><?= $produk->ukuran; ?><input type="hidden" name="ukuran" value="<?= $produk->ukuran; ?>"></td>
                                         </tr>
                                         <tr>
-                                            <th nowrap>Tambahan Toping </th>
+                                            <th nowrap>Merk AC </th>
                                             <td>
                                                 <select name="toping" id="toping" class="form-control">
                                                     <?php foreach ($prodtop as $toping) { ?>
@@ -34,7 +34,7 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th nowrap>Jumlah</th>
+                                            <th nowrap>Jumlah AC</th>
                                             <td>
                                                 <input type="number" name="jumlah" class="form-control">
                                         </tr>
@@ -53,6 +53,7 @@
                                             <?php } ?>
                                         </tr>
                                     </table>
+
                                 </center>
                                 <p>
                                     <button type="submit" class="btn btn-success btn-md fas fw fa-shopping-cart"> Pesan</button>

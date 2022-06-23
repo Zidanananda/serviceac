@@ -8,7 +8,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8">
-					<p class="contact-action"><i class="fa fa-phone-square"></i>AC ANDA BERMASALAH ?, Telpon aja kesini: <strong>+62 13 2648 1439</strong></p>
+					<p class="contact-action"><i class="fa fa-phone-square"></i>AC Anda Bermasalah ?, Telpon aja kesini: <strong>+62 8132 648 1439 </strong></p>
 				</div>
 				<div class="col-md-4 clearfix">
 					<ul class="login-cart">
@@ -37,20 +37,7 @@
 																																				echo '0';
 																																			}
 																																			?>)</a>
-								<div class="dropdown-menu dropup">
-									<span class="caret"></span>
-									<ul class="media-list">
-										<li class="media">
-											<img class="pull-left" src="images/product-item.jpg" alt="">
-											<div class="media-body">
-												<h6>
-													<span></span>
-												</h6>
-											</div>
-										</li>
-									</ul>
-									<button class="btn btn-primary btn-sm">Checkout</button>
-								</div>
+
 							</div>
 						</li>
 					</ul>

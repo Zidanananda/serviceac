@@ -5,7 +5,7 @@
       <h3 class="page-title">
         <span class="page-title-icon bg-gradient-primary text-white mr-2">
           <i class="mdi mdi-pizza"></i>
-        </span> Produk GO ~ AC Service
+        </span> Produk Service AC
       </h3>
       <nav aria-label="breadcrumb">
         <ul class="breadcrumb">
@@ -19,7 +19,7 @@
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Produk Jasa GO ~ AC Service</h4>
+            <h4 class="card-title">Produk Service AC</h4>
             <p class="card-description"></p>
             <button class="btn btn-gradient-success btn-icon-text mb-3" data-toggle="modal" data-target="#addProdukModal">
               <i class="mdi mdi-plus btn-icon-prepend"></i> Tambah </button>
@@ -44,12 +44,11 @@
                 <tr>
                   <th scope="col"> No. </th>
                   <th scope="col"> Gambar </th>
-                  <th scope="col"> Nama Jasa Service </th>
-                  <th scope="col"> Type AC </th>
-                  <th scope="col"> Merk AC </th>
-                  <th scope="col"> Deskripsi </th>
+                  <th scope="col"> Produk Service </th>
+                  <th scope="col"> Tipe Ac </th>
                   <th scope="col"> Harga </th>
-                  <th scope="col"> Stok </th>
+                  <th scope="col"> Jumlah Jasa </th>
+                  <th scope="col"> Pesanan </th>
                   <th scope="col"> Aksi </th>
                 </tr>
               </thead>
@@ -62,11 +61,10 @@
                     <td><img src="<?= base_url() ?>assets/uploads/pizza/<?= $pizzas->image; ?>" class="img-md rounded-circle mr-3" alt="image"></td>
                     <td><?= $pizzas->nama_produk; ?></td>
                     <td><?= $pizzas->ukuran; ?></td>
-                    <td><?= $pizzas->nama_toping; ?></td>
-                    <td><?= $pizzas->deskripsi; ?></td>
                     <td><?= $pizzas->harga; ?></td>
                     <td><?= $pizzas->stok; ?></td>
-                    <td><a href="<?= base_url(); ?>admin/u_produk/<?= $pizzas->id_produk; ?>" class="btn btn-info btn-xs">Edit</a>&nbsp;<a href="<?= base_url(); ?>Admin/hapusproduk/<?= $pizzas->id_produk; ?>" onclick="return confirm('Kamu yakin akan hapus produk ?');" class="btn btn-danger btn-xs">Hapus</a></td>
+                    <td><?= $pizzas->terjual; ?></td>
+                    <td><a href="<?= base_url(); ?>admin/u_produk/<?= $pizzas->id_produk; ?>" class="btn btn-info btn-xs">Edit</a>&nbsp;<a href="<?= base_url(); ?>Admin/hapusproduk/<?= $pizzas->id_produk; ?>" onclick="return confirm('Kamu yakin akan hapus produk Jasa Service AC ?');" class="btn btn-danger btn-xs">Hapus</a></td>
                   </tr>
                 <?php
                   $no++;
@@ -83,7 +81,7 @@
       <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Tambah produk GO ~ AC Service</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Tambah produk Jasa Service</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -93,18 +91,20 @@
             <form class="forms-sample" action="<?= base_url(); ?>admin/t_produk" method="post" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="exampleInputName1">Nama Produk Jasa</label>
-                <input type="text" class="form-control" name="namaproduk" id="namaproduk" placeholder="Nama produk jasa" required>
+                <input type="text" class="form-control" name="namaproduk" id="namaproduk" placeholder="Nama produk jasa service AC" required>
               </div>
               <div class="form-group">
-                <label for="exampleSelectGender">Type AC</label>
+                <label for="exampleSelectGender">Tipe-AC</label>
                 <select class="form-control-lg js-example-basic-single" name="ukuran" id="ukuran" style="width:100%" required>
-                  <option value="I-PK">1-PK</option>
-                  <option value="II-PK">2-PK</option>
-                  <option value="All-varian">all</option>
+                  <option value="besar">III-PK</option>
+                  <option value="sedang">II-pk</option>
+                  <option value="kecil">I-PK</option>
+                  <option value="all">ALLVARIANT</option>
+
                 </select>
               </div>
               <div class="form-group">
-                <label for="exampleSelectGender">Merk</label>
+                <label for="exampleSelectGender">Merk AC</label>
                 <select class="form-control js-example-basic-single" name="toping" id="toping" style="width:100%" required>
                   <?php foreach ($toping as $topings) { ?>
                     <option value="<?= $topings->kode_toping; ?>"><?= $topings->nama_toping; ?></option>
@@ -120,14 +120,14 @@
                 <input type="number" class="form-control" name="harga" id="harga" placeholder="Harga" required>
               </div>
               <div class="form-group">
-                <label for="exampleInputPassword4">Stok Jasa Perminggu</label>
+                <label for="exampleInputPassword4">Stok Jasa</label>
                 <input type="number" class="form-control" name="stok" id="stok" placeholder="Stok" required>
               </div>
               <div class="form-group">
                 <label>Upload gambar</label>
                 <input type="file" name="img" class="file-upload-default">
                 <div class="input-group col-xs-12">
-                  <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image" required>
+                  <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload gambar" required>
                   <span class="input-group-append">
                     <button class="file-upload-browse btn btn-gradient-primary" type="button">Upload</button>
                   </span>

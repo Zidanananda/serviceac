@@ -53,7 +53,7 @@
                   <tr>
                     <th scope="row"><?= $no; ?></th>
                     <td><?= $pizzas->nama_toping; ?></td>
-                    <td><a href="<?= base_url(); ?>Admin/u_toping/<?= $pizzas->id_toping; ?>" class="btn btn-info btn-xs">Edit</a>&nbsp;<a href="<?= base_url(); ?>Admin/hapustoping/<?= $pizzas->id_toping; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Kamu yakin akan menghapus toping ?');">Hapus</a></td>
+                    <td><a href="<?= base_url(); ?>Admin/u_toping/<?= $pizzas->id_toping; ?>" class="btn btn-info btn-xs">Edit</a>&nbsp;<a href="<?= base_url(); ?>Admin/hapustoping/<?= $pizzas->id_toping; ?>" class="btn btn-danger btn-xs" onclick="return confirm('Kamu yakin akan menghapus Merk AC ?');">Hapus</a></td>
                   </tr>
                 <?php
                   $no++;
@@ -69,7 +69,7 @@
       <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Tambah Merk AC baru</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Tambah Merk AC</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -79,12 +79,12 @@
             <form class="forms-sample" action="<?= base_url(); ?>admin/t_toping" method="post" enctype="multipart/form-data">
               <div class="form-group">
                 <label for="exampleInputName1">Merk AC</label>
-                <input type="text" class="form-control" name="namaproduk" id="namaproduk" placeholder="Merk AC" required>
+                <input type="text" class="form-control" name="namaproduk" id="namaproduk" placeholder="Nama Toping" required>
               </div>
-              <div class="form-group">
-                <label for="exampleInputName1">Deskripsi AC</label>
-                <input type="text" class="form-control" name="deskripsi_toping" id="deskripsi_toping" placeholder="Deskripsi AC" required>
-              </div>
+              <!-- <div class="form-group">
+                <label for="exampleInputName1">Deskripsi Toping</label>
+                <input type="text" class="form-control" name="deskripsi_toping" id="deskripsi_toping" placeholder="Deskripsi Topingnya" required>
+              </div> -->
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-success">Tambah</button>

@@ -112,9 +112,9 @@ class Pesanan extends CI_Controller
             //konfigurasi sebelum gambar diupload
             $config['upload_path'] = 'assets/uploads/member/';
             $config['allowed_types'] = 'jpg|png|jpeg';
-           // $config['max_size'] = '50000';
-           /*  $config['max_width'] = '1024';
-            $config['max_height'] = '1000'; */
+            $config['max_size'] = '3000';
+            $config['max_width'] = '1024';
+            $config['max_height'] = '1000';
             $config['file_name'] = 'img' . time();
 
             //memuat atau memanggil library upload
@@ -221,5 +221,10 @@ class Pesanan extends CI_Controller
             $this->load->view('member/listpesanan', $data);
             $this->load->view('member/template/m_v_footer');
         }
+    }
+    public function print()
+    {
+        $data['pesanan'] = $this->m_pesanan->get('pesan')->result();
+        $this->load->view('print_pesanan', $data);
     }
 }

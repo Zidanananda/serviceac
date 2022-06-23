@@ -55,6 +55,7 @@ class daftar_produk extends CI_Controller
 		$qtoping = "SELECT * FROM toping ORDER BY nama_toping ASC";
 		$querypil = "SELECT * FROM produk ORDER BY id_produk DESC LIMIT 1";
 		$queryuser = "SELECT * FROM user WHERE username='$usrnm'";
+		
 		$prodfeature = $this->m_produk->customquery($queryfeature)->result();
 		$prodpil = $this->m_produk->customquery($querypil)->result();
 		$prodtop = $this->m_produk->customquery($qtoping)->result();

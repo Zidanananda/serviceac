@@ -45,7 +45,7 @@
 								?>
 
 									<tr>
-										<td><img src="<?= base_url('assets/uploads/member/') . $psn->buktitrf; ?>" style="width:150px; height:150px;" alt=""></td>
+										<td><img src="<?= base_url('assets/uploads/member/') . $psn->buktitrf; ?>" alt=""></td>
 										<td><?= $psn->nama_produk ?></td>
 										<td><?= $psn->jumlah ?></td>
 										<td><?= $psn->total ?></td>

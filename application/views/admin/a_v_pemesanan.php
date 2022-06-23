@@ -19,7 +19,7 @@
       <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
           <div class="card-body">
-            <h4 class="card-title">Data Pesanan Pelanggan</h4>
+            <h4 class="card-title">Data Pemesanan Customer GO-AC </h4>
             <p class="card-description"> Periode <code>1 Bulan terakhir</code>
             </p>
             <table class="table datatable-simple table-striped">
@@ -31,11 +31,11 @@
                   <th> Nama </th>
                   <th> Alamat</th>
                   <th> No. Telp. </th>
-                  <th> Nama Produk </th>
-                  <th> Jumlah</th>
+                  <th> Produk Jasa Servce </th>
+                  <th> Qty</th>
                   <th> Total </th>
                   <th> Bukti Bayar</th>
-                  <th> #</th>
+                  <th> Aksi</th>
                 </tr>
               </thead>
               <tbody>
@@ -47,7 +47,7 @@
                     <td><?= $ps->tgl_pesan; ?></td>
                     <td><?= $ps->status; ?></td>
                     <td><?= $ps->nama; ?></td>
-                    <td><?= $ps->alamat; ?></td>
+                    <td><?= $ps->alamat_new; ?></td>
                     <td><?= $ps->notelp; ?></td>
                     <td><?= $ps->nama_produk; ?></td>
                     <td><?= $ps->jumlah; ?></td>
